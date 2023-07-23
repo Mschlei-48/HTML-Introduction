@@ -1,0 +1,103 @@
+<!--Now we will be learning about adding hovers, which  are the changes that happen to a button or whatever element-->
+<!--when you hover over them. Some buttons may change color, some may become light in color some may become dark in color.-->
+<!--We will add these changes to the buttons we had before-->
+<h2>Hovers,Transitions and Shadows</h3>
+<p>Buttons to apply these to:</p>
+
+<ol>
+    <li>YouTube Subscribe button</li>
+    <br>
+    <br>
+    <button id="subs">Subscribe</button>
+    <style>
+        @keyframes makebounce{
+            0%{
+                transform:scale(1);
+            }
+            50%{
+                transform:scale(0.9);
+            }
+            100%{
+                transform:scale(1);
+            }
+        }
+        #subs:active{
+            animation:makebounce 0.5s;
+        }
+        #subs:hover{
+            opacity:0.7;
+
+        }
+/*Note that the hover and active are called pseudo classes. They add extra styling to the element when something happens, like when you hover or touch/activate the element/button.*/
+/*Now we will use the hover pseudo class to make the button light when we hover it using the opacity property.*/
+/*The opacity property defines how transparent an element is. It uses values between 0 and 1. A 0 means the eleent will be completely opaque, it will be invisible*/
+/* THen a 1 makes the element less opaque or not opaque at all.*/
+/*So numbers close to zero make the element very opaque, but those closer to zero make the element less opaque.*/
+/*In our case we want the element button to be a little bit opaque like the real YouTube buttn when you hover it, so in that case a 0.7 will be used.*/
+        #subs{
+            width:110px;
+            height:50px;
+            background-color: black;
+            color:white;
+            font-weight:700;
+            border:none;
+            border-radius: 25px;
+            cursor:pointer;
+
+        }
+    </style>
+    <br>
+    <br>
+    <li>YouTube Join button</li>
+    <br>
+    <br>
+    <button id="join">JOIN</button>
+    <style>
+        #join{
+            position:relative;
+            width:100px;
+            height:50px;
+            font-weight:bold;
+            border-style:solid;
+            background-color:white;
+            color:rgb(34, 121, 235);
+            border-color:rgb(34, 121, 235);
+            border-radius:5px;
+            cursor:pointer;
+        }
+        /*Now for the join button, when you hover over it the colors of background and the text and border reverse. */
+        /*So the color of the border and font color becomes the background color, while the font color becomes the background color.*/
+        /*The border is removed when you hover.*/
+        /*Let us add these changes to our button*/
+        #join:hover{
+            background-color:rgb(34, 121, 235);
+            color:white;
+            border:none;
+        }
+        /*Now when the join button is clicked, I want the button to show a tick that shows that is was clicked.*/
+        /*The following code will do that*/
+        /*We are using pseudo-element ::after to add the tick.*/
+        /*We will add the tick afte the button, but make it invisible using the opacity property until the button is clicked*/
+        /*Then when it is clicked, we will show the tick, and place it at the middle of the button to show that the button has been clicked.*/
+        /*Then after clicking, and the tick showing, the tick will remain invisible*/
+        #join::after{
+            content:'\2713';/*Unicode character for the tick*/
+            position:absolute; /*Allows us to put the tick sysmbol exactly where we want inside the button*/
+            top:50%; /*Ensures that the tick sits in the middle of the button*/
+            left:50%; /*Ensures that the tick sits in the middle of the button*/
+            /*Note that the top and left tell the tick to go sit in the middle of the button, both horizontally and vertically.*/
+            transform:translate(-50%,-50%); /*Perfectly centers the tick in the middle of the button*/
+            font-size:5px;
+            font-weight:bold;
+            opacity:0;/*Initially hide the tick*/
+            color:green;
+        }
+
+        /*Pseudo-class for when the HTML element is clicked/active.*/
+       #join:active::after{
+        opacity:1;/*Make the button visible*/
+       }
+
+    </style>
+
+</ol>

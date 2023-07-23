@@ -1,0 +1,118 @@
+<!--Note that CSS is merely used for styling HTML webpages.-->
+<!--It is not a programming language.-->
+<!--It helps you style your webpages, maybe the color of your buttons, the background color of your websites and other things.-->
+<h3>What we will be learning in this tutorial:</h3>
+<ol>
+    <li>Create a YouTube Subscribe button,a Tweeter Tweet button and a YouTube join button using HTML.</li>
+    <li>Use CSS to modify the appearance of the buttons so it can look like a real YouTube button, and like a real Twitter button in terms of color and other things.</li>
+</ol>
+
+<ol>
+<li>YouTube Subscribe button</li>
+<br>
+<br>
+<button 
+id="SubscribeButton">SUBSCRIBE
+</button> <!--This is the ordinary button. Now we must use CSS to make it look like a YouTibe button.-->
+                           <!--To do that we must use the style tag-->
+<style>
+#SubscribeButton
+{
+    background-color:rgb(168, 12, 12);
+    color:white;
+    border:none; 
+    height:40px; 
+    width:105;
+    border-radius:2px; 
+    cursor:pointer;                 
+}
+</style>
+
+<!--1.Change the background color of the button to red-->
+<!--2.Change the color of the text to white-->
+<!--3.Remove the border in the button as the YouTube button does not have a border.-->
+<!--4.Now since the button is not looking axacty like the YouTube channel, we must do more CSS styling.-->
+<!--5.Change te height of the button as it looks very short. Use the height property which is measured in pixels(px)-->
+<!--6.Also change the width as the button is not wide enough. Also the width is measured in pixels.-->
+<!--7.Modify the color of the background of the button again by hovering over the color box and select the shade of red color that you think matches that of YouTube.-->
+<!--8.The YouTube subscribe button has round corners, but our button currently has pointy corners. We must change this using the border-radius property. it is alsoeasured in pixels. -->
+<!--The higher the border-radius value, the more round the button will be.-->
+<!--9.Note that when you hover over a real YouTube subscribe button, your cursor changes to a hand which is called a pointer-->
+<!--So we must do the same for out buttom. This is done using the cursor property. We will set it to pointer as we mentioned that the hand is called a pointer.-->
+<!--Note that at first the button element had no "id" attribute, and so the styling was applied to all buttons.-->
+<!--But this is not good, as each button has to have its own styling in this case.-->
+<!--So we had to add the "id" attribute. It gives a name to an element,so that when you make styling to that element, it is only applied to that element, amd mot the other similar elements. -->
+<!--So when applying the styling you just reference the name of the element, in our case the button.-->
+
+<br>
+<br>
+<li>YouTube Join Button</li>
+<br>
+<br>
+<button id="join-button">JOIN</button>  <!--Do the join button and gove it an id attribute-->
+<!--Give the join button its own styles.-->
+<style>
+    #join-button
+    {
+        background-color:white;
+        color:rgb(34, 121, 235);
+        border-color:rgb(34, 121, 235);
+        height:50px;
+        width:80px;
+        border-radius:3px;
+        border-style:solid;
+        border-width:1px;
+        cursor:pointer;
+    }
+</style>
+<!--Styling Notes-->
+<!--1. I changed the background color of the button to be white as the YouTube join button-->
+<!--2. I changed the color to the color there, I had to check all shades to get the right shade of blue. The blue I took had to be like dodger blue instead of the solid blue.-->
+<!--3. Then the border of the join button is also watery blue, so I had to change the color of the border to be watery blue.-->
+<!--4. The height of the butoon had to be changed to match that of YouTube join button as it was very short at first.-->
+<!--5. The width had to be changed as well as the button was very narrow.-->
+<!--6. We had to change the shape of the border using border-radius. At first it was very pointy, so we had to change it to be round shaped.-->
+<!--7. We had to change the style of the border as well to solid. This is because at first the color of the bprder was not consistent throughout the border, some parts were too dark blue while some were the right shade of blue.-->
+<!--8. The border we have is too thick than the normal border, so we must adjust the border width.-->
+<!--9. Change the cursor to be a pointer because when you hover over a join button in YouTibe you get the pointer(hand)-->
+
+
+<br>
+<br>
+<li>Twitter Tweet Button</li>
+
+<!--Make the Twitter Retweet Button-->
+<br>
+<br>
+<button id="Tweet-button">Tweet</button>
+
+<!--Style our Tweet button-->
+<style>
+    #Tweet-button
+    {
+        color:white;
+        background-color:rgb(37, 139, 207);
+        border-radius:20px;
+        border:none;
+        height:40px;
+        width:90px;
+        font-weight:bold;
+        cursor:pointer;
+        font-size:16px;
+
+    }
+</style>
+
+<!--Styling Notes-->
+<!--1. First we made the text color to be white as in the Twitter Tweet button-->
+<!--2. Then we changed the background color to be vivid cerulean blue.-->
+<!--3. Then we made the border to be round as the Twitter Tweet button using a very high border-radius value.-->
+<!--4. Then we removed the border as the Twitter Tweet button has no border.-->
+<!--5. Then we changed the height as the button we made was very short.-->
+<!--6. We also changed the widht as the button we made is very narrow.-->
+<!--7. We made the font weight to be bold so that the text appears bold instead of thin like in the Twitter Tweet button.-->
+<!--8. We changed the cursor to be a pointer as the Twitter Tweet button has a pointer cursor.-->
+<!--Change the font size to be bigger as the Twitter Tweet button has big font.-->
+
+
+</ol>
