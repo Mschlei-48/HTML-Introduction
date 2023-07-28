@@ -5,6 +5,10 @@ on:
   push: #The trigger is when something is pushed to the repository
     branches: #But we do not want any repository branch, we want the trigger to occur when something is pushed to
       -main   #the main branch
+  #Specify the permissions
+permissions:
+  id-token:write  #This gives permission to the workflow to write to the repo.
+  contents:write  #This gives permission to the workflow to write to the contents of repo
 #Specify the jobs to be run
 jobs: 
 #Give a name to the job
