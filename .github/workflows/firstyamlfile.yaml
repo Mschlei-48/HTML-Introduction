@@ -38,7 +38,7 @@ jobs:
           #I will comment out the code since we do not need any requirements for this code
           #pip install -r requirements.txt
           #Specify the language your file will be using, and the name of the file you want to run with the workflow
-          html Exercise1.html
+          html Exercise1.html>README.md
           #Specify what must be written in the README.md file, then push that to the file using the >
           #echo "## Model metrics">README.md
 
