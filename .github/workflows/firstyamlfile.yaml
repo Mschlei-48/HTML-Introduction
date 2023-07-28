@@ -1,0 +1,49 @@
+#Specify the name of the YAML workflow
+name: FirstYAML
+#Specify the triggers for the workflow to start running
+on:
+  push: #The trigger is when something is pushed to the repository
+    branches: #But we do not want any repository branch, we want the trigger to occur when something is pushed to
+      -main   #the main branch
+#Specify the jobs to be run
+jobs: 
+#Give a name to the job
+  firstWorkflowJob:
+  #Specify the runner for the job
+    runs-on:Windows-latest
+    #Define the steps for this job
+    steps:
+    #The actions/checkout@vs will clone the codes of the repo and make them available for this workflow
+    #If your workflow does not involve using the code from the directory, then you do not need this line.
+    #We only have it here because we will be running the codes from the repo.
+      -uses:actions/checkout@vs
+      #The following step prepares the enviroment for using CML(Continuous Machine Learning) 
+      #The CML tool allows you to add comments and reports to the pull requests automatically 
+      -uses:iterative/setup-cml@v1  
+      #The follwoing step is for training the machine learning model and so we willl name it Train model
+      -name:Train model
+      #Next we are defining the enviroment variables using the env step
+      #Then we have REPO_TOKEN:${{secrets.GITHUB_TOKEN}}
+      #The role of a token is to authenticate and grants certain permissions to interact with the workflow
+      #For example persmission to access the code in the repo, permission for adding comments,permission to create stauts checks and other things
+      #So by setting this token you are giving permission to the workflow to do certain things automatically
+       env:
+        REPO_TOKEN:${{secrets.GITHUB_TOKEN}}
+        #The create a multi-line script that runs the models and outputs the required output
+        #You define your actual workflow here, that is the codes to be run and where the otput should be stored
+        run: |
+#Install all tha you may need to install
+          python -m pip install --upgrade pip
+          #Specify the requirements file so that the requirements can be imported for the code to run
+          #I will comment out the code since we do not need any requirements for this code
+          #pip install -r requirements.txt
+          #Specify the language your file will be using, and the name of the file you want to run with the workflow
+          html Exercise1.html
+          #Specify what must be written in the README.md file, then push that to the file using the >
+          #echo "## Model metrics">README.md
+
+
+
+
+
+                                
